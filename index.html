@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostIt — Compartilhe sua ideia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+
+  <header>
+    <div class="logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">PostIt</span>
+    </div>
+    <p class="tagline">Compartilhe o que você está pensando</p>
+  </header>
+
+  <main>
+    <section class="form-section" aria-label="Criar novo post">
+      <h1 class="section-title">Nova publicação</h1>
+
+      <form id="post-form" novalidate>
+        <div class="field-group">
+          <label for="titulo" class="field-label">Título</label>
+          <input
+            type="text"
+            id="titulo"
+            name="titulo"
+            class="field-input"
+            placeholder="Dê um título impactante..."
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="field-group">
+          <label for="conteudo" class="field-label">Conteúdo</label>
+          <textarea
+            id="conteudo"
+            name="conteudo"
+            class="field-textarea"
+            placeholder="O que está passando pela sua cabeça?"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btn-submit" aria-label="Publicar post">
+          <span class="btn-text">Publicar</span>
+          <span class="btn-icon">→</span>
+          <span class="btn-loading" aria-hidden="true">...</span>
+        </button>
+      </form>
+    </section>
+
+    <section class="output-section" id="output-section" aria-live="polite" aria-label="Post publicado">
+      <div class="post-card" id="post-card">
+        <div class="post-card-header">
+          <div class="avatar" aria-hidden="true">U</div>
+          <div class="post-meta">
+            <span class="post-author">Você</span>
+            <span class="post-time" id="post-time"></span>
+          </div>
+          <span class="post-badge">✦ Publicado</span>
+        </div>
+
+        <h2 id="renderizador-titulo" class="post-titulo"></h2>
+        <p id="renderizador-conteudo" class="post-conteudo"></p>
+
+        <div class="post-actions" aria-label="Ações do post">
+          <button class="action-btn" aria-label="Curtir">👍 <span>Curtir</span></button>
+          <button class="action-btn" aria-label="Comentar">💬 <span>Comentar</span></button>
+          <button class="action-btn" aria-label="Compartilhar">🔗 <span>Compartilhar</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com <span aria-label="amor">♥</span> · API: jsonplaceholder.typicode.com</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
